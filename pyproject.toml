@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "uuid25"
+version = "0.1.0"
+description = "25-digit case-insensitive UUID encoding"
+authors = ["LiosK <contact@mail.liosk.net>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/uuid25/python"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+mypy = "^0.991"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
