@@ -116,7 +116,7 @@ class TestUuid25(unittest.TestCase):
             self.assertEqual(x, Uuid25.parse(e.urn.upper()).value)
 
     def test_to_other_formats(self) -> None:
-        """Examines conversion-to results against manually prepared cases."""
+        """Examines "conversion-to" results against manually prepared cases."""
         for e in TEST_CASES:
             x = Uuid25.parse(e.uuid25)
             self.assertEqual(str(x), e.uuid25)
@@ -157,6 +157,18 @@ class TestUuid25(unittest.TestCase):
             self.assertRaises(ParseError, lambda: Uuid25.parse_hyphenated(e))
             self.assertRaises(ParseError, lambda: Uuid25.parse_braced(e))
             self.assertRaises(ParseError, lambda: Uuid25.parse_urn(e))
+
+    def test_from_to_uuid(self) -> None:
+        """Tests conversions from/to standard uuid module's UUID values."""
+        import uuid
+
+        for e in TEST_CASES:
+            x = uuid.UUID(hex=e.hyphenated)
+            self.assertEqual(str(x), e.hyphenated)
+
+            y = Uuid25.parse(e.uuid25).to_uuid()
+            self.assertEqual(x, y)
+            self.assertEqual(Uuid25.from_uuid(x).value, e.uuid25)
 
 
 class PreparedCase(typing.NamedTuple):

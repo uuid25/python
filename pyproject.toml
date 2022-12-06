@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "uuid25"
-version = "0.1.0"
+version = "0.1.1"
 description = "25-digit case-insensitive UUID encoding"
 authors = ["LiosK <contact@mail.liosk.net>"]
 license = "Apache-2.0"
