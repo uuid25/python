@@ -57,7 +57,7 @@ import uuid
 
 
 class Uuid25:
-    """Primary value type containing the Uuid25 representation of a UUID.
+    """The primary value type containing the Uuid25 representation of a UUID.
 
     This class wraps a string value to provide conversion methods from/to other popular
     UUID textual representations.
@@ -299,7 +299,7 @@ class Uuid25:
 
 
 class ParseError(ValueError):
-    """Error parsing a UUID string representation."""
+    """An error parsing a UUID string representation."""
 
     @classmethod
     def _with_default_message(cls) -> ParseError:

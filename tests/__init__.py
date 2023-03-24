@@ -57,7 +57,7 @@ class TestUuid25(unittest.TestCase):
         self.assertNotIn(G, s)
         self.assertIn(Uuid25.parse(G), s)
 
-    def test_from_to_bytes(self) -> None:
+    def test_from_to_prepared_bytes(self) -> None:
         """Tests conversions from/to byte arrays using manually prepared cases."""
         for e in TEST_CASES:
             x = Uuid25.parse(e.uuid25)
