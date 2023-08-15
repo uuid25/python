@@ -44,7 +44,7 @@ assert e.to_uuid() == uuid_module
 # generate UUIDv4 in Uuid25 format (backed by uuid module)
 import uuid25
 
-print(uuid25.gen_v4())  # e.g. "99wfqtl0z0yevxzpl4hv2dm5p"
+print(uuid25.gen_v4())  # e.g., "99wfqtl0z0yevxzpl4hv2dm5p"
 ```
 """
 
