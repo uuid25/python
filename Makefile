@@ -4,8 +4,8 @@ build: lint test
 	poetry build
 
 lint:
-	black --check uuid25 tests
-	mypy --strict uuid25 tests
+	poetry run black --check uuid25 tests
+	poetry run mypy --strict uuid25 tests
 
 test:
-	python -m unittest -v
+	poetry run python -m unittest -v
